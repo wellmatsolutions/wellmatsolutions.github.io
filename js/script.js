@@ -43,26 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------
-     Trusted clients marquee
-     (placeholder monogram badges — swap in real
-     client logos by editing the array below)
+     Trusted clients — static logo row (hardcoded
+     in index.html, no JS needed)
   --------------------------------------------- */
-  const clientNames = [
-    'FOOD CO', 'PACKPRO', 'PHARMA VN', 'PETRO IND',
-    'AGRI GROUP', 'ELECTRO MFG', 'BEVCO', 'STEEL WORKS'
-  ];
-  const track = document.getElementById('marqueeTrack');
-  if (track) {
-    const buildSet = () => clientNames.map(name => {
-      const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2);
-      return `<div class="client-badge">
-                <span class="client-badge__mark">${initials}</span>
-                <span>${name}</span>
-              </div>`;
-    }).join('');
-    // duplicate the set so the loop animation is seamless
-    track.innerHTML = buildSet() + buildSet();
-  }
+
 
   /* ---------------------------------------------
      Hero photo slideshow — real product/factory
@@ -103,22 +87,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------------------------
-     RFQ form — client-side only.
-     Wire this up to a real endpoint (Formspree,
-     Getform, your own API, etc.) before going live.
+     RFQ form — submits to Formspree
+     (https://formspree.io/f/xeeypbla). Submissions
+     land in the Formspree dashboard and forward to
+     the linked notification email.
   --------------------------------------------- */
   const rfqForm = document.getElementById('rfqForm');
   const rfqNote = document.getElementById('rfqNote');
 
   if (rfqForm) {
-    rfqForm.addEventListener('submit', (e) => {
+    rfqForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!rfqForm.checkValidity()) {
         rfqForm.reportValidity();
         return;
       }
-      rfqNote.textContent = 'Cảm ơn bạn! Yêu cầu báo giá đã được ghi nhận — đội ngũ kỹ thuật sẽ liên hệ sớm.';
-      rfqForm.reset();
+
+      const submitBtn = rfqForm.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Đang gửi...'; }
+      rfqNote.textContent = '';
+
+      try {
+        const response = await fetch(rfqForm.action, {
+          method: 'POST',
+          body: new FormData(rfqForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          rfqNote.textContent = 'Cảm ơn bạn! Yêu cầu báo giá đã được ghi nhận — đội ngũ kỹ thuật sẽ liên hệ sớm.';
+          rfqForm.reset();
+        } else {
+          rfqNote.textContent = 'Có lỗi khi gửi yêu cầu. Vui lòng thử lại hoặc liên hệ trực tiếp qua hotline/email.';
+        }
+      } catch (err) {
+        rfqNote.textContent = 'Không thể kết nối. Vui lòng kiểm tra mạng và thử lại.';
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+      }
     });
   }
 

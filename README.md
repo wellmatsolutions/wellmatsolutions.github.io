@@ -31,18 +31,25 @@ well-mat-site/
 
 ## Things to hook up before going live
 
-1. **RFQ form** (`#contact`) — currently client-side only (shows a confirmation
-   message, does not send email). Point it at a real form backend, e.g.:
-   - [Formspree](https://formspree.io) — add `action="https://formspree.io/f/yourID"`
-     and `method="POST"` to the `<form>`, and you can remove the JS `preventDefault`
-     handler in `js/script.js`.
-   - Or your own API endpoint (fetch call from `script.js`).
-2. **Trusted clients logos** — the marquee currently shows placeholder monogram
-   badges built from a name list at the top of `script.js` (`clientNames`).
-   Swap in real client logos (as `<img>` tags) once you have permission to use them.
-3. **PDF certificates** — the "View FDA Test Report" / "Download Quatest
-   Certificate" buttons link to `#contact` as placeholders. Point their `href`
-   at the actual PDF files once you have them (e.g. `assets/fda-report.pdf`).
+1. **RFQ form** (`#contact`) — wired up to Formspree (`https://formspree.io/f/xeeypbla`).
+   Submissions land in that Formspree account's dashboard and forward to whatever
+   email address(es) are linked there. Free-tier Formspree caps at 50
+   submissions/month with 30 days of history — check the dashboard periodically
+   and export/upgrade if volume grows. To switch to a different backend, change
+   the form's `action` in `index.html` and adjust the fetch call in
+   `js/script.js` if the response format differs.
+2. **Trusted clients logos** — the marquee shows Masan Consumer, Nestlé, and
+   Abbott logos (`assets/clients/`) followed by placeholder monogram badges.
+   Only include real logos here if there's an actual business relationship —
+   using a company's trademark to imply endorsement or partnership without one
+   can be legally risky. Swap the images in `assets/clients/` and the
+   `clientLogos` array in `js/script.js` as the client list changes.
+3. **PDF certificate** — the "View Test Report" button (Food Contact Approved
+   card) links to `assets/docs/food-contact-nylon-fabric.pdf` (a real MNAQ test
+   report). The Product Portfolio section also has a "Download Full Catalogue
+   (PDF)" button linking to `assets/docs/filter-products-well-mat.pdf`. Swap
+   either file (keep the same filename, or update the `href` in `index.html`)
+   as documents are revised.
 4. **Favicon / social preview image** — a real favicon and Open Graph image are
    worth adding once brand assets exist.
 
