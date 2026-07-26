@@ -193,9 +193,18 @@
     <p class="eyebrow eyebrow--dark">Track record</p>
     <h2 class="section-title">Trusted by Industry Leaders</h2>
     <p class="section-lead section-lead--dark">Chúng tôi tự hào cung cấp giải pháp lọc và vật liệu cho các nhà máy, tập đoàn hàng đầu.</p>
-  </div>
-  <div class="marquee" aria-label="Khách hàng tiêu biểu">
-    <div class="marquee__track" id="marqueeTrack"></div>
+
+    <div class="clients-row">
+      <div class="client-card">
+        <img src="assets/clients/masan.png" alt="Masan Consumer" loading="lazy">
+      </div>
+      <div class="client-card client-card--dark">
+        <img src="assets/clients/nestle.png" alt="Nestlé" loading="lazy">
+      </div>
+      <div class="client-card">
+        <img src="assets/clients/abbott.png" alt="Abbott" loading="lazy">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -205,6 +214,9 @@
     <p class="eyebrow eyebrow--dark">Catalogue</p>
     <h2 class="section-title">Product Portfolio</h2>
     <p class="section-lead section-lead--dark">Cung cấp toàn diện từ vật liệu, lõi lọc, thiết bị đến linh kiện thay thế.</p>
+    <a href="assets/docs/filter-products-well-mat.pdf" target="_blank" rel="noopener" class="btn btn--ghost btn--sm catalogue-download">
+      Download Full Catalogue (PDF)
+    </a>
 
     <div class="tabs" id="productTabs">
       <div class="tabs__nav" role="tablist" aria-label="Product categories">
@@ -305,7 +317,7 @@
       <div class="cert-card">
         <h3>Food Contact Approved</h3>
         <p>Đạt tiêu chuẩn an toàn tiếp xúc thực phẩm, không nhả sợi, không chứa chất độc hại.</p>
-        <a href="#contact" class="btn btn--outline-light btn--sm">View Test Report</a>
+        <a href="assets/docs/food-contact-nylon-fabric.pdf" target="_blank" rel="noopener" class="btn btn--outline-light btn--sm">View Test Report</a>
       </div>
       <div class="cert-card">
         <span class="cert-card__tag">QC</span>
@@ -348,7 +360,7 @@
       </ul>
     </div>
 
-    <form class="rfq-form" id="rfqForm" novalidate>
+    <form class="rfq-form" id="rfqForm" action="https://formspree.io/f/xeeypbla" method="POST" novalidate>
       <h3>Request For Quote</h3>
       <div class="field">
         <label for="fld-name">Họ và tên / Công ty</label>
@@ -383,6 +395,7 @@
           <option>Lõi lọc</option>
           <option>Thiết bị</option>
           <option>Linh kiện</option>
+          <option>Sản phẩm khác...</option>
         </select>
       </div>
       <div class="field">
