@@ -84,14 +84,6 @@ button{ font-family:inherit; cursor:pointer; }
   margin-bottom:16px;
 }
 .section-title--light{ color:var(--white); }
-.catalogue-download{
-  margin:-16px 0 40px;
-  gap:8px;
-}
-.catalogue-download::before{
-  content:"↓";
-  font-family:var(--font-body);
-}
 .section-lead{
   max-width:640px;
   color:var(--steel-light);
@@ -385,45 +377,48 @@ button{ font-family:inherit; cursor:pointer; }
 .industry-card p{ margin:0; color:var(--steel-light); font-size:.84rem; }
 
 /* =========================================================
-   Trusted clients — static logo row
+   Clients marquee
    ========================================================= */
-.clients{ padding-bottom:80px; }
-.clients-row{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  gap:28px;
-  margin-top:44px;
-  padding-top:40px;
+.clients{ padding-bottom:60px; }
+.marquee{
+  overflow:hidden;
   border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding-block:28px;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
-.client-card{
+.marquee__track{
+  display:flex;
+  gap:56px;
+  width:max-content;
+  animation:scroll-left 32s linear infinite;
+}
+@keyframes scroll-left{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+.client-badge{
   display:flex;
   align-items:center;
-  justify-content:center;
-  height:96px;
-  min-width:180px;
-  padding:20px 32px;
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:6px;
-  box-shadow:var(--shadow-1);
+  gap:10px;
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  letter-spacing:.06em;
+  color:var(--steel);
+  white-space:nowrap;
+  filter:grayscale(1);
+  opacity:.7;
 }
-.client-card img{
-  max-height:100%;
-  max-width:100%;
-  width:auto;
-  height:auto;
-  object-fit:contain;
+.client-badge__mark{
+  width:34px; height:34px;
+  border-radius:50%;
+  border:1.5px solid var(--steel-light);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display);
+  font-size:.8rem;
+  color:var(--steel);
 }
-.client-card--dark{
-  background:none;
-  border:none;
-  box-shadow:none;
-  padding:0;
-}
-.client-card--dark img{ max-height:96px; border-radius:6px; }
 
 /* =========================================================
    Products tabs
