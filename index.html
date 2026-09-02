@@ -3,141 +3,439 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Danh sách phiếu giao hàng — Well Mat Solutions</title>
-<link rel="stylesheet" href="css/style.css">
-<style>html{visibility:hidden}</style>
-<script type="module" src="js/admin-guard.js"></script>
+<title>Well Mat Solutions — Vietnamese Industrial Materials &amp; Filtration Solutions</title>
+<meta name="description" content="Well Mat Solutions: Sản xuất và gia công vật liệu lọc, lõi lọc, thiết bị lọc công nghiệp tại Việt Nam. FDA &amp; Quatest certified.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <img src="assets/logo.png" alt="Well Mat Solutions" onerror="this.style.display='none'">
-      <div class="brand-text">
-        <div class="name">WELL MAT SOLUTIONS</div>
-        <div class="tag">Hệ thống phiếu giao hàng</div>
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="top-bar">
+    <div class="wrap top-bar__row">
+      <a href="tel:+84384871216" class="top-bar__item">
+        <svg viewBox="0 0 24 24" class="icon-sm"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Hotline kỹ thuật 24/7: +84 384 871 216
+      </a>
+      <a href="mailto:sales@well-mat.com" class="top-bar__item">
+        <svg viewBox="0 0 24 24" class="icon-sm"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.3 6.1a.8.8 0 0 0 1 0L19.8 6H4.2Z"/></svg>
+        sales@well-mat.com
+      </a>
+    </div>
+  </div>
+
+  <div class="main-header">
+    <div class="wrap main-header__row">
+      <a href="#home" class="brand">
+        <span class="brand__logo-plate">
+          <img src="assets/logo.png" alt="Well Mat Solutions" class="brand__logo">
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#industries">Industries</a>
+        <a href="#products">Products</a>
+        <a href="#quality">Quality &amp; Certs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="main-header__actions">
+        <a href="#contact" class="btn btn--amber btn--sm">Get A Quote</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <nav>
-      <a href="index.html" class="active">Danh sách phiếu</a>
-      <a href="create.html">Tạo phiếu mới</a>
-      <a href="#" id="logoutBtn" style="display:none">Đăng xuất</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero__slideshow" id="heroSlideshow" aria-hidden="true">
+    <div class="hero__slide is-active" style="background-image:url(assets/hero/hero-1.jpg)"></div>
+    <div class="hero__slide" style="background-image:url(assets/hero/hero-2.jpg)"></div>
+    <div class="hero__slide" style="background-image:url(assets/hero/hero-3.jpg)"></div>
+    <div class="hero__slide" style="background-image:url(assets/hero/hero-4.jpg)"></div>
+    <div class="hero__slide" style="background-image:url(assets/hero/hero-5.jpg)"></div>
+    <div class="hero__slide" style="background-image:url(assets/hero/hero-6.jpg)"></div>
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="wrap hero__content">
+    <p class="eyebrow">Manufactured &amp; engineered in Vietnam</p>
+    <h1 class="hero__headline">Vietnamese Industrial Materials &amp; Specialized Filtration Solutions</h1>
+    <p class="hero__sub">In-house manufacturing in Vietnam, custom engineering, optimized costs, and 24/7 technical support.</p>
+    <div class="hero__ctas">
+      <a href="#products" class="btn btn--amber">Explore Products</a>
+      <a href="#contact" class="btn btn--outline-light">Request a Quote</a>
+    </div>
+  </div>
+  <div class="hero__dots" id="heroDots" role="tablist" aria-label="Hero slideshow"></div>
+  <a href="#about" class="scroll-cue" aria-label="Cuộn xuống">
+    <svg viewBox="0 0 24 24"><path d="M12 4v14m0 0 6-6m-6 6-6-6"/></svg>
+  </a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dark">Company Profile</p>
+    <h2 class="section-title">About Well Mat Solutions</h2>
+
+    <div class="about__grid">
+      <div class="about__timeline">
+        <div class="timeline">
+          <div class="timeline__item">
+            <span class="timeline__year">2024</span>
+            <p>Thành lập công ty, tập trung nghiên cứu &amp; phát triển nguyên liệu chất lượng cao cho các ngành bao bì, thực phẩm, dược phẩm và điện tử.</p>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__year">2025</span>
+            <p>Mở rộng phát triển chuyên sâu dòng sản phẩm lọc công nghiệp với sự đồng hành của đội ngũ kỹ sư giàu kinh nghiệm thực chiến tại các nhà máy thực phẩm.</p>
+          </div>
+          <div class="timeline__item timeline__item--now">
+            <span class="timeline__year">Now</span>
+            <p>Đồng hành cùng các nhà máy dầu khí, bao bì, dược phẩm, thực phẩm trên toàn quốc với năng lực gia công tại chỗ.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__capabilities">
+        <div class="cap-grid">
+          <div class="cap-card">
+            <svg class="cap-card__icon" viewBox="0 0 24 24"><path d="M3 21V9l6-4 6 4v3l6-4v13H3Zm2-2h4v-4H5v4Zm6 0h4v-6h-4v6Zm6 0h4v-8h-4v8Z"/></svg>
+            <h3>Domestic Manufacturing</h3>
+            <p>Có sẵn xưởng sản xuất &amp; gia công trực tiếp tại Việt Nam.</p>
+          </div>
+          <div class="cap-card">
+            <svg class="cap-card__icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 10.6 4 2.4-.8 1.3-4.7-2.8V6h1.5v6.6Z"/></svg>
+            <h3>Efficient Delivery</h3>
+            <p>Rút ngắn thời gian giao hàng, không phụ thuộc chuỗi cung ứng quốc tế.</p>
+          </div>
+          <div class="cap-card">
+            <svg class="cap-card__icon" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 8.7L4.1 7 12 3.3 19.9 7 12 10.7ZM2 12l10 5 10-5v5l-10 5-10-5v-5Z"/></svg>
+            <h3>Cost Optimization</h3>
+            <p>Giá thành cạnh tranh trực tiếp từ xưởng, tối ưu chi phí vận hành.</p>
+          </div>
+          <div class="cap-card">
+            <svg class="cap-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19.4 13a7.4 7.4 0 0 0 0-2l2-1.6-2-3.4-2.4.6a7.4 7.4 0 0 0-1.7-1L14.9 3h-4l-.4 2.6a7.4 7.4 0 0 0-1.7 1l-2.4-.6-2 3.4L6.4 11a7.4 7.4 0 0 0 0 2l-2 1.6 2 3.4 2.4-.6a7.4 7.4 0 0 0 1.7 1l.4 2.6h4l.4-2.6a7.4 7.4 0 0 0 1.7-1l2.4.6 2-3.4-2-1.6Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <h3>Custom Engineering</h3>
+            <p>Gia công cá nhân hóa theo thông số (vật liệu, kích thước, micron rating) của từng nhà máy.</p>
+          </div>
+        </div>
+
+        <div class="support-banner">
+          <svg viewBox="0 0 24 24"><path d="M12 1a9 9 0 0 0-9 9v7a3 3 0 0 0 3 3h1v-8H5v-2a7 7 0 0 1 14 0v2h-2v8h1a3 3 0 0 0 3-3v-7a9 9 0 0 0-9-9Z"/></svg>
+          <span><strong>24/7 Technical Support</strong> — Đội ngũ kỹ sư hỗ trợ kỹ thuật và xử lý sự cố dây chuyền mọi lúc, mọi nơi.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="section section--dark industries" id="industries">
+  <div class="wrap">
+    <p class="eyebrow">Where we work</p>
+    <h2 class="section-title section-title--light">Industries We Serve</h2>
+    <p class="section-lead">Giải pháp vật liệu và lọc công nghiệp tối ưu cho các ngành then chốt:</p>
+
+    <div class="industry-grid">
+      <div class="industry-card">
+        <svg viewBox="0 0 24 24"><path d="M12 2c2 3 5 7 5 11a5 5 0 1 1-10 0c0-4 3-8 5-11Z"/></svg>
+        <h3>Oil &amp; Gas</h3>
+        <p>Công nghiệp dầu khí</p>
+      </div>
+      <div class="industry-card">
+        <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4V7Zm9 0v14M3 7l9 4 9-4"/></svg>
+        <h3>Rigid &amp; Flexible Packaging</h3>
+        <p>Bao bì cứng và mềm</p>
+      </div>
+      <div class="industry-card">
+        <svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
+        <h3>Electronics &amp; Home Appliances</h3>
+        <p>Điện tử và Điện gia dụng</p>
+      </div>
+      <div class="industry-card">
+        <svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11H3Zm4-2h2v-5H7v5Zm4 0h2v-8h-2v8Zm4 0h2v-4h-2v4Z"/></svg>
+        <h3>Construction</h3>
+        <p>Xây dựng &amp; Công nghiệp nặng</p>
+      </div>
+      <div class="industry-card">
+        <svg viewBox="0 0 24 24"><path d="M10.5 3.5a4.5 4.5 0 0 1 6.4 6.4L10.6 16.2a4.5 4.5 0 0 1-6.4-6.4l6.3-6.3Z"/><path d="M8.5 8.5l7 7"/></svg>
+        <h3>Pharmaceuticals</h3>
+        <p>Dược phẩm &amp; Y tế</p>
+      </div>
+      <div class="industry-card">
+        <svg viewBox="0 0 24 24"><path d="M7 2v6a3 3 0 0 0 3 3v11M10 2v9M13 2v9M17 2c-1.7 1.3-2 3-2 5s.3 3.7 2 5v9"/></svg>
+        <h3>Food &amp; Beverage</h3>
+        <p>Thực phẩm &amp; Đồ uống</p>
+      </div>
+      <div class="industry-card">
+        <svg viewBox="0 0 24 24"><path d="M12 2c3 3 3 6 0 9-3-3-3-6 0-9Zm0 9c3 3 3 6 0 9-3-3-3-6 0-9ZM4 12h16"/></svg>
+        <h3>Agriculture</h3>
+        <p>Nông nghiệp &amp; Chế biến nông sản</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUSTED CLIENTS ============ -->
+<section class="section clients">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dark">Track record</p>
+    <h2 class="section-title">Trusted by Industry Leaders</h2>
+    <p class="section-lead section-lead--dark">Chúng tôi tự hào cung cấp giải pháp lọc và vật liệu cho các nhà máy, tập đoàn hàng đầu.</p>
+
+    <div class="clients-row">
+      <div class="client-card">
+        <img src="assets/clients/masan.png" alt="Masan Consumer" loading="lazy">
+      </div>
+      <div class="client-card client-card--dark">
+        <img src="assets/clients/nestle.png" alt="Nestlé" loading="lazy">
+      </div>
+      <div class="client-card">
+        <img src="assets/clients/abbott.png" alt="Abbott" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT PORTFOLIO ============ -->
+<section class="section products" id="products">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dark">Catalogue</p>
+    <h2 class="section-title">Product Portfolio</h2>
+    <p class="section-lead section-lead--dark">Cung cấp toàn diện từ vật liệu, lõi lọc, thiết bị đến linh kiện thay thế.</p>
+    <a href="assets/docs/filter-products-well-mat.pdf" target="_blank" rel="noopener" class="btn btn--ghost btn--sm catalogue-download">
+      Download Full Catalogue (PDF)
+    </a>
+
+    <div class="tabs" id="productTabs">
+      <div class="tabs__nav" role="tablist" aria-label="Product categories">
+        <button class="tabs__btn is-active" role="tab" aria-selected="true" aria-controls="tab-media" id="tabbtn-media" data-tab="tab-media"><span class="tabs__num">01</span>Filter Media</button>
+        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-elements" id="tabbtn-elements" data-tab="tab-elements"><span class="tabs__num">02</span>Filter Elements</button>
+        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-equipment" id="tabbtn-equipment" data-tab="tab-equipment"><span class="tabs__num">03</span>Filter Equipment</button>
+        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-components" id="tabbtn-components" data-tab="tab-components"><span class="tabs__num">04</span>Filter Components</button>
+        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-screener" id="tabbtn-screener" data-tab="tab-screener"><span class="tabs__num">05</span>Screener Components</button>
+      </div>
+
+      <div class="tabs__panels">
+        <div class="tabs__panel is-active" id="tab-media" role="tabpanel" aria-labelledby="tabbtn-media">
+          <p class="tabs__desc">Vật liệu lọc — nền tảng của mọi hệ thống lọc công nghiệp.</p>
+          <div class="tab-gallery">
+            <img src="assets/products/media-1.jpg" alt="Cận cảnh vải lọc dệt" loading="lazy">
+            <img src="assets/products/media-2.jpg" alt="Tấm vải lọc lắp trên khung ép" loading="lazy">
+            <img src="assets/products/media-3.jpg" alt="Cuộn vải lọc dệt tại xưởng sản xuất" loading="lazy">
+            <img src="assets/products/media-4.jpg" alt="Túi lọc dạng bao" loading="lazy">
+          </div>
+          <ul class="spec-list">
+            <li><span>Vải dệt (Woven Fabric) &amp; Vải không dệt (Non-woven Fabric)</span></li>
+            <li><span>Màng lọc (Membrane) &amp; Kim loại thiêu kết (Sintered Metal)</span></li>
+            <li><span>Bột trợ lọc (Precoat Powder) &amp; Vật liệu lọc khác</span></li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--sm">Request Spec Sheet</a>
+        </div>
+
+        <div class="tabs__panel" id="tab-elements" role="tabpanel" aria-labelledby="tabbtn-elements">
+          <p class="tabs__desc">Lõi lọc &amp; phụ kiện phân tách cho mọi quy mô hệ thống.</p>
+          <div class="tab-gallery">
+            <img src="assets/products/elements-1.jpg" alt="Lõi lọc dạng dây quấn" loading="lazy">
+            <img src="assets/products/elements-2.jpg" alt="Đầu nối &amp; phụ kiện lọc nhựa" loading="lazy">
+            <img src="assets/products/elements-3.jpg" alt="Đệm tháp xử lý dạng lưới nhựa" loading="lazy">
+          </div>
+          <ul class="spec-list">
+            <li><span>Lõi lọc giấy/sợi (Filter Cartridges) &amp; Thiết bị lọc nhỏ/cầm tay (Filter Devices)</span></li>
+            <li><span>Ống lọc nhựa/Vỏ bọc (Filter Capsules) &amp; Đầu phun lọc (Filter Nozzles)</span></li>
+            <li><span>Đệm tháp xử lý (Tower Packings)</span></li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--sm">Request Spec Sheet</a>
+        </div>
+
+        <div class="tabs__panel" id="tab-equipment" role="tabpanel" aria-labelledby="tabbtn-equipment">
+          <p class="tabs__desc">Thiết bị lọc công nghiệp cho dây chuyền sản xuất quy mô lớn.</p>
+          <div class="tab-gallery">
+            <img src="assets/products/equipment-1.jpg" alt="Tấm lọc thiết bị ép khung bản" loading="lazy">
+            <img src="assets/products/equipment-2.jpg" alt="Cấu tạo bộ lọc lá (Leaf Filter)" loading="lazy">
+            <img src="assets/products/equipment-3.jpg" alt="Bộ lọc trống quay (Rotary Drum)" loading="lazy">
+            <img src="assets/products/equipment-4.jpg" alt="Máy ép khung bản (Press Filter)" loading="lazy">
+          </div>
+          <ul class="spec-list">
+            <li><span>Máy ép bùn/ép khung bản (Press Filter) &amp; Băng tải lọc (Belt Filter)</span></li>
+            <li><span>Bộ lọc Diastar, Đĩa lọc (Disc Filter), Lọc lá (Leaf Filter)</span></li>
+            <li><span>Bộ lọc nến (Candle Filter), Máy ly tâm &amp; Bộ lọc trống quay (Rotary Drum)</span></li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--sm">Request Spec Sheet</a>
+        </div>
+
+        <div class="tabs__panel" id="tab-components" role="tabpanel" aria-labelledby="tabbtn-components">
+          <p class="tabs__desc">Linh kiện thiết bị lọc — thay thế đúng thông số, đúng vật liệu.</p>
+          <div class="tab-gallery">
+            <img src="assets/products/components-1.jpg" alt="Khung lưới lọc dạng khay" loading="lazy">
+            <img src="assets/products/components-2.jpg" alt="Tấm lọc (Filter Plate) bề mặt vân sóng" loading="lazy">
+          </div>
+          <ul class="spec-list">
+            <li><span>Tấm khung bản/Tấm lọc (Filter Plates)</span></li>
+            <li><span>Khung lọc (Filter Frames) &amp; Phụ kiện thay thế</span></li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--sm">Request Spec Sheet</a>
+        </div>
+
+        <div class="tabs__panel" id="tab-screener" role="tabpanel" aria-labelledby="tabbtn-screener">
+          <p class="tabs__desc">Linh kiện máy sàng cho công đoạn phân loại nguyên liệu.</p>
+          <div class="tab-gallery">
+            <img src="assets/products/screener-1.jpg" alt="Dệt lưới sàng trên máy dệt công nghiệp" loading="lazy">
+            <img src="assets/products/screener-2.jpg" alt="Cận cảnh lưới sàng dạng dệt" loading="lazy">
+            <img src="assets/products/screener-3.jpg" alt="Cận cảnh cấu trúc lưới sàng" loading="lazy">
+          </div>
+          <ul class="spec-list">
+            <li><span>Lưới sàng (Mesh Screen)</span></li>
+            <li><span>Ống nối mềm (Flexible Connectors) &amp; Bi làm sạch lưới sàng (Screen Cleaning Balls)</span></li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--sm">Request Spec Sheet</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUALITY & CERTS ============ -->
+<section class="section section--dark quality" id="quality">
+  <div class="wrap">
+    <p class="eyebrow">Assurance</p>
+    <h2 class="section-title section-title--light">Food-Grade Compliance &amp; Quality Inspection</h2>
+    <p class="section-lead">Sản phẩm vải/túi lọc của Well Mat Solutions được kiểm định nghiêm ngặt, đảm bảo an toàn tuyệt đối khi tiếp xúc trực tiếp với thực phẩm, dược phẩm.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <h3>Food Contact Approved</h3>
+        <p>Đạt tiêu chuẩn an toàn tiếp xúc thực phẩm, không nhả sợi, không chứa chất độc hại.</p>
+        <a href="assets/docs/food-contact-nylon-fabric.pdf" target="_blank" rel="noopener" class="btn btn--outline-light btn--sm">View Test Report</a>
+      </div>
+      <div class="cert-card">
+        <span class="cert-card__tag">QC</span>
+        <h3>In-house QC Process</h3>
+        <p>Quy trình gia công, may cắt túi lọc tại xưởng trong nước tuân thủ nghiêm ngặt tiêu chuẩn kiểm soát chất lượng.</p>
+      </div>
+    </div>
+
+    <div class="quality__cta">
+      <a href="#contact" class="btn btn--amber">Request Free Filter Sample</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT & RFQ ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap contact__grid">
+    <div class="contact__info">
+      <p class="eyebrow eyebrow--dark">Get in touch</p>
+      <h2 class="section-title">Contact &amp; Request For Quote</h2>
+      <p class="contact__company">CÔNG TY TNHH WELL MAT SOLUTIONS</p>
+
+      <ul class="contact__list">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 6.5 9 11 9 11s9-4.5 9-11c0-5-4-9-9-9Zm0 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          <span>Tầng 5, 231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh, Việt Nam</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          <span>Hotline kỹ thuật 24/7: +84 384 871 216</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.3 6.1a.8.8 0 0 0 1 0L19.8 6H4.2Z"/></svg>
+          <span>sales@well-mat.com</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 10.6 4 2.4-.8 1.3-4.7-2.8V6h1.5v6.6Z"/></svg>
+          <span>24/7 Technical Response</span>
+        </li>
+      </ul>
+    </div>
+
+    <form class="rfq-form" id="rfqForm" action="https://formspree.io/f/xeeypbla" method="POST" novalidate>
+      <h3>Request For Quote</h3>
+      <div class="field">
+        <label for="fld-name">Họ và tên / Công ty</label>
+        <input type="text" id="fld-name" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="fld-phone">Số điện thoại / Zalo</label>
+        <input type="tel" id="fld-phone" name="phone" required autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="fld-email">Email công việc</label>
+        <input type="email" id="fld-email" name="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="fld-industry">Ngành nghề hoạt động</label>
+        <select id="fld-industry" name="industry" required>
+          <option value="" disabled selected>Chọn ngành nghề</option>
+          <option>Thực phẩm</option>
+          <option>Bao bì</option>
+          <option>Dược phẩm</option>
+          <option>Dầu khí</option>
+          <option>Điện tử</option>
+          <option>Xây dựng</option>
+          <option>Nông nghiệp</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fld-product">Dòng sản phẩm quan tâm</label>
+        <select id="fld-product" name="product" required>
+          <option value="" disabled selected>Chọn dòng sản phẩm</option>
+          <option>Vật liệu lọc</option>
+          <option>Lõi lọc</option>
+          <option>Thiết bị</option>
+          <option>Linh kiện</option>
+          <option>Sản phẩm khác...</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fld-detail">Nhu cầu chi tiết (Quy cách, kích thước, số lượng)</label>
+        <textarea id="fld-detail" name="detail" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn--amber btn--block">Submit Inquiry</button>
+      <p class="rfq-form__note" id="rfqNote" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap site-footer__row">
+    <div class="site-footer__brand">
+      <span class="brand__logo-plate">
+        <img src="assets/logo.png" alt="Well Mat Solutions" class="brand__logo">
+      </span>
+      <div>
+        <p class="site-footer__tagline">Woven for what matters — filtration engineered in Vietnam.</p>
+      </div>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Footer">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#industries">Industries</a>
+      <a href="#products">Products</a>
+      <a href="#quality">Quality &amp; Certs</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
-</div>
-
-<div class="page">
-  <div class="page-head">
-    <div>
-      <h1>Danh sách phiếu giao hàng</h1>
-      <p>Theo dõi tình trạng giao hàng và tải phiếu đã ký nhận.</p>
-    </div>
-    <a href="create.html" class="btn amber">+ Tạo phiếu mới</a>
+  <div class="wrap">
+    <p class="site-footer__copy">Copyright © 2026 Well Mat Solutions. All Rights Reserved.</p>
   </div>
+</footer>
 
-  <div id="msg"></div>
-
-  <div class="field" style="max-width:320px">
-    <label for="search">Tìm theo tên khách hàng / mã phiếu</label>
-    <input type="text" id="search" placeholder="VD: Công ty ABC hoặc WMS-2026...">
-  </div>
-
-  <div id="list" class="note-list"></div>
-</div>
-
-<footer class="site">CÔNG TY TNHH WELL MAT SOLUTIONS · sales@well-mat.com</footer>
-
-<script type="module">
-import { db, collection, getDocs, deleteDoc, doc, query, orderBy, auth, onAuthStateChanged } from "./js/firebase-init.js";
-
-const listEl = document.getElementById("list");
-const msgEl = document.getElementById("msg");
-const searchEl = document.getElementById("search");
-let allNotes = [];
-
-function fmtDate(d){
-  if(!d) return "—";
-  try{
-    const dt = typeof d === "string" ? new Date(d) : d;
-    return dt.toLocaleDateString("vi-VN");
-  }catch(e){ return d; }
-}
-
-function render(notes){
-  if(notes.length === 0){
-    listEl.innerHTML = `<div class="empty"><div class="big">📦</div>Chưa có phiếu giao hàng nào.<br><a href="create.html" class="btn amber" style="margin-top:14px;display:inline-flex;">+ Tạo phiếu đầu tiên</a></div>`;
-    return;
-  }
-  listEl.innerHTML = notes.map(n => {
-    const done = n.status === "done";
-    return `
-    <a class="note-row ${done ? "done" : ""}" href="view.html?id=${n.id}">
-      <div class="col">
-        <span class="cust">${n.customerName || "(chưa có tên khách hàng)"}</span>
-        <span class="code">${n.code || n.id}</span>
-      </div>
-      <div class="col">
-        <span class="meta">Ngày giao: ${fmtDate(n.deliveryDate)}</span>
-        <span class="meta">Tài xế: ${n.driverName || "—"}</span>
-      </div>
-      <span class="status-pill ${done ? "done" : "pending"}">
-        ${done ? "✔ Đã ký nhận" : "⏳ Chờ giao"}
-      </span>
-      <button type="button" class="row-del" data-id="${n.id}" data-name="${(n.customerName || n.code || n.id).replace(/"/g,"&quot;")}" title="Xóa phiếu này">🗑</button>
-    </a>`;
-  }).join("");
-
-  listEl.querySelectorAll(".row-del").forEach(btn => {
-    btn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const id = btn.dataset.id;
-      const name = btn.dataset.name;
-      if(!confirm(`Xóa phiếu giao hàng của "${name}"?\n\nHành động này không thể hoàn tác.`)) return;
-      btn.disabled = true;
-      try{
-        await deleteDoc(doc(db, "deliveryNotes", id));
-        allNotes = allNotes.filter(n => n.id !== id);
-        render(allNotes);
-      }catch(err){
-        console.error(err);
-        msgEl.innerHTML = `<div class="msg error">Không xóa được phiếu: ${err.message}</div>`;
-        btn.disabled = false;
-      }
-    });
-  });
-}
-
-async function load(){
-  msgEl.innerHTML = `<div class="msg info">Đang tải danh sách phiếu...</div>`;
-  try{
-    const q = query(collection(db, "deliveryNotes"), orderBy("createdAt", "desc"));
-    const snap = await getDocs(q);
-    allNotes = [];
-    snap.forEach(d => allNotes.push({ id: d.id, ...d.data() }));
-    msgEl.innerHTML = "";
-    render(allNotes);
-  }catch(e){
-    console.error(e);
-    msgEl.innerHTML = `<div class="msg error">Không tải được dữ liệu. Kiểm tra lại cấu hình Firebase trong js/firebase-config.js. Chi tiết lỗi: ${e.message}</div>`;
-  }
-}
-
-searchEl.addEventListener("input", () => {
-  const q = searchEl.value.trim().toLowerCase();
-  if(!q){ render(allNotes); return; }
-  render(allNotes.filter(n =>
-    (n.customerName || "").toLowerCase().includes(q) ||
-    (n.code || n.id || "").toLowerCase().includes(q)
-  ));
-});
-
-// Chỉ tải danh sách phiếu SAU KHI Firebase xác nhận đã đăng nhập xong,
-// tránh lỗi "Missing or insufficient permissions" do gọi Firestore quá sớm.
-onAuthStateChanged(auth, (user) => {
-  if(user) load();
-});
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
